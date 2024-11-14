@@ -11,11 +11,11 @@ if __name__ == '__main__':
     torch.manual_seed(fix_seed)
     np.random.seed(fix_seed)
 
-    parser = argparse.ArgumentParser(description='iTransformer')
+    parser = argparse.ArgumentParser(description='datatest')
 
     # basic config
     parser.add_argument('--is_training', type=int, required=False, default=1, help='status')
-    parser.add_argument('--model_id', type=str, required=False, default='repeat', help='model id')
+    parser.add_argument('--model_id', type=str, required=False, default='test', help='model id')
     parser.add_argument('--model', type=str, required=False, default='TSMixer',
                         help='model name, options: [TSMixer, iTransformer, iInformer, iReformer, iFlowformer, iFlashformer]')
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     # forecasting task
     parser.add_argument('--seq_len', type=int, default=96, help='input sequence length')
     parser.add_argument('--label_len', type=int, default=48, help='start token length') # no longer needed in inverted Transformers
-    parser.add_argument('--pred_len', type=int, default=48, help='prediction sequence length')  # default: 96
+    parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')  
 
     # model define
     parser.add_argument('--enc_in', type=int, default=590, help='encoder input size')   # number of features

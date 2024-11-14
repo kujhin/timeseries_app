@@ -271,20 +271,14 @@ class Exp_Long_Term_Forecast(Exp_Basic):
         f.write('\n')
         f.close()
 
-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe]))
-        # np.save(folder_path + 'pred.npy', preds)
-        # np.save(folder_path + 'true.npy', trues)
+        np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe]))
+        np.save(folder_path + 'pred.npy', preds)
+        np.save(folder_path + 'true.npy', trues)
         np.savetxt(folder_path + 'metrics.txt', np.array([mae, mse, rmse, mape, mspe]),
                    fmt='%.6f',  
                    delimiter=',',
                    header='mae,mse,rmse,mape,mspe', 
                    comments='')  
-        np.savetxt(folder_path + 'pred.txt', preds, 
-                   fmt='%.6f',
-                   delimiter=',')
-        np.savetxt(folder_path + 'true.txt', trues, 
-                   fmt='%.6f',
-                   delimiter=',')
 
         return
 
